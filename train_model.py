@@ -9,11 +9,21 @@ from sklearn.metrics import accuracy_score, classification_report
 from tqdm import tqdm
 
 # 🔹 Load dataset with optimized dtypes
-df = pd.read_csv("dataset_medical.csv", dtype={
-    'ECG (bpm)': 'float32', 'Température corporelle (°C)': 'float32', 'SpO2 (%)': 'float32',
-    'Pression artérielle (systolique)': 'float32', 'Pression artérielle (diastolique)': 'float32',
-    'Glucose (mg/dL)': 'float32', 'Rythme respiratoire (rpm)': 'float32', 'Température ambiante (°C)': 'float32',
-    'Activité': 'category', 'Humidité de la peau': 'category', 'Niveau de stress': 'category'
+df = pd.read_csv("dataset_medical_complet.csv", dtype={
+    'ECG (bpm)': 'float32',
+    'Température corporelle (°C)': 'float32',
+    'SpO2 (%)': 'float32',
+    'Pression artérielle (systolique)': 'float32',
+    'Pression artérielle (diastolique)': 'float32',
+    'Glucose (mg/dL)': 'float32',
+    'Rythme respiratoire (rpm)': 'float32',
+    'Température ambiante (°C)': 'float32',
+    'Activité': 'category',
+    'Humidité de la peau': 'category',
+    'Niveau de stress': 'category',
+    'ECG irrégulier': 'bool',
+    'Problèmes cutanés': 'bool',
+    'Maladie prédite': 'string'
 })
 
 # 🔹 Clean and preprocess data
